@@ -1,5 +1,9 @@
 {
-  "extends": ["plugin:shopify/react", "plugin:prettier/recommended"],
+  "extends": [
+    "plugin:shopify/react",
+    "plugin:prettier/recommended",
+    "plugin:storybook/recommended"
+  ],
   "rules": {
     "no-process-env": "off",
     "no-lonely-if": "off",

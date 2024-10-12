@@ -1,10 +1,9 @@
 import replace from 'rollup-plugin-replace';
 import resolve from 'rollup-plugin-node-resolve';
 import commonjs from 'rollup-plugin-commonjs';
-import babel from 'rollup-plugin-babel';
+import { babel } from '@rollup/plugin-babel';
 import filesize from 'rollup-plugin-filesize';
-import {uglify} from 'rollup-plugin-uglify';
-import pkg from './package.json';
+import pkg from './package.json' assert { type: 'json' };
 
 const external = (id) => !id.startsWith('.') && !id.startsWith('/');
 
@@ -15,7 +14,7 @@ const babelConfig = (
   },
 ) => ({
   comments: false,
-  runtimeHelpers: true,
+  babelHelpers: 'runtime',
   presets: [
     '@babel/preset-react',
     [
@@ -59,7 +58,6 @@ const umdConfig = ({minify} = {}) => ({
       ),
     }),
     commonjs(),
-    minify ? uglify() : { },
     filesize(),
   ],
 });

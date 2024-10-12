@@ -1,5 +1,5 @@
 import {addParameters, configure} from '@storybook/react';
-import theme from './theme';
+import theme from './theme.js';
 
 addParameters({
   options: {
