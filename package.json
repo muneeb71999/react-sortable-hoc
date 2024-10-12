@@ -39,7 +39,7 @@
   ],
   "scripts": {
     "start": "storybook dev -p 9001",
-    "build": "rollup -c",
+    "build": "rollup -c --bundleConfigAsCjs",
     "test": "eslint src/** --ext .js --quiet",
     "release": "standard-version --no-verify",
     "storybook": "storybook dev -p 6006",
